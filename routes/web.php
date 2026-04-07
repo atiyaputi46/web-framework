@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Auth\MahasiswaController;
+use App\Http\Controllers\Auth\DosenController;
+use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -8,6 +9,11 @@ Route::get('/', function () {
 });
 
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+// Route::get('/mahasiswa', [\App\Http\Controllers\MahasiswaController::class, 'index']); // menggunakan namespace lengkap
+
+Route::get('/dosen', [DosenController::class, 'index']);
+
+Route::get('/insert-sql', [MahasiswaController::class, 'insertSql']);
 
 // Route::get('/home',function(){
 //     echo "Halaman Home <br>";
